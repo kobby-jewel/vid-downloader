@@ -21,7 +21,7 @@ class YoutubeController extends Controller
         if ($url){
              $downloadOptions = $youtube->getDownloadLinks($url);
 
-       return  $downloadOptions->getFirstCombinedFormat()->url;
+       return redirect($downloadOptions->getFirstCombinedFormat()->url);
         }
         return 'No URL found';
 
